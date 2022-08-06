@@ -1,52 +1,19 @@
-// // import React, { useEffect } from 'react'
+import React, { useEffect } from "react";
 
-// // export default function AddressBook() {
-
-// //   useEffect(() => {
-// //     fetch('https://randomuser.me/api?results=25')
-// //     .then(response => response.json())
-// //     .then(json => console.log(json))
-// //     }, []);
-
-// //   return (
-// //   <div>
-// //     <h2><strong>ADDRESS BOOK USERS</strong></h2>
-// //   </div>
-// //   )
-// // }
-
-
-import React, { Component } from "react";
-
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      arrayOfUsers: [],
-    };
-  }
-
-  componentDidMount() {
+export default function AddressBook() {
+  useEffect(() => {
     fetch("https://randomuser.me/api?results=25")
-      .then((response) => {
-        return response.json();
-      })
-      .then((arrayOfUsers) => this.setState({ arrayOfUsers }));
-  }
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+  }, []);
 
-  render() {
-    return (
-      <div className="AddressBook">
-        <h2>
-          <strong>ADDRESS BOOK USERS</strong>
-        </h2>
-        {/* <ol>
-          {this.state.arrayOfUsers.map((user, index) => {
-            return <li key={index}>{user.name</li>;
-          })}
-        </ol> */}
-      </div>
-    );
-  }
+  return (
+    <div className="AddressBookUsers">
+      {/* <ol>
+        {this.state.arrayOfUsers.results.map((user, i) => {
+          return <li key={i}>{user.name}</li>
+        })}
+      </ol> */}
+    </div>
+  );
 }
