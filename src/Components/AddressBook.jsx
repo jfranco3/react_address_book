@@ -15,7 +15,7 @@
 // //   )
 // // }
 
-import userEvent from "@testing-library/user-event";
+
 import React, { Component } from "react";
 
 export default class App extends React.Component {
@@ -42,8 +42,8 @@ export default class App extends React.Component {
           <strong>ADDRESS BOOK USERS</strong>
         </h2>
         {/* <ol>
-          {this.state.arrayOfUsers.map(() => {
-            return <li></li>;
+          {this.state.arrayOfUsers.map((user, index) => {
+            return <li key={index}>{user.name</li>;
           })}
         </ol> */}
       </div>
