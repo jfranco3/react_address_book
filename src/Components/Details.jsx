@@ -19,7 +19,7 @@ export default function Details(props) {
         <div>
           {moreInfo && <MoreDetails />}
           <button onClick={() => setMoreInfo(!moreInfo)}>
-            {moreInfo ? "Display Less Info" : "Display More Info"}
+            {moreInfo ? "Display Less" : "Display More"}
           </button>
         </div>
       );
