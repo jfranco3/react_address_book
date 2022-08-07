@@ -25,8 +25,8 @@ export default function AddressBook(props) {
           return (
             <li key={index}>
               <h2>
-                {person.name.title}
-                {person.name.first}
+                {person.name.title}{" "}
+                {person.name.first}{" "}
                 {person.name.last}
               </h2>
               <p>Gender: {person.gender}</p>
