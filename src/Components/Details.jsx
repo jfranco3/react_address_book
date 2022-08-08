@@ -7,8 +7,13 @@ export default function Details(props) {
     console.log("users", props.users);
     return (
       <div>
+        <p>Gender: {props.users.gender}</p>
+        <p>DOB: {props.users.dob.date}</p>
+        <p>AGE: {props.users.dob.age}</p>
         <p>
-          DOB: {props.users.dob.date} AGE: {props.users.dob.age}
+          Location: {props.users.location.street.name}{" "}
+          {props.users.location.street.number} {props.users.location.city}{" "}
+          {props.users.location.state} {props.users.location.country}
         </p>
       </div>
     );
@@ -18,7 +23,7 @@ export default function Details(props) {
     <div>
       {moreInfo && <MoreDetails />}
       <button onClick={() => setMoreInfo(!moreInfo)}>
-        {moreInfo ? "Display Less" : "Display More"}
+        {moreInfo ? "Hide Details" : "Show Details"}
       </button>
     </div>
   );

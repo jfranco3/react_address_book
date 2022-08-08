@@ -27,19 +27,13 @@ export default function AddressBook() {
               <h2>
                 {users.name.title} {users.name.first} {users.name.last}
               </h2>
-              <p>Gender: {users.gender}</p>
-              <p>
-                Location: {users.location.street.name}{" "}
-                {users.location.street.number} {users.location.city}{" "}
-                {users.location.state} {users.location.country}
-              </p>
-              <img src={`${users.picture.large}`}></img>
+              <img src={`${users.picture.large}`} alt=""></img>
 
               <Details users={users} />
               <hr></hr>
             </li>
           );
-        })}
+        })};
       </ol>
     </div>
   );
