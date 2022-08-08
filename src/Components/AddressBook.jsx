@@ -12,7 +12,6 @@ export default function AddressBook() {
         })
         .then((users) => {
           setUsers(users);
-          console.log(users);
         });
     };
     fetchUsers();

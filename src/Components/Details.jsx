@@ -4,7 +4,6 @@ export default function Details(props) {
   const [moreInfo, setMoreInfo] = useState(false);
 
   const MoreDetails = () => {
-    console.log("users", props.users);
     return (
       <div>
         <p>Gender: {props.users.gender}</p>
