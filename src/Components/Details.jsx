@@ -1,26 +1,25 @@
-import React, {useState, useEffect} from "react";
+import React, { useState } from "react";
 
 export default function Details(props) {
-    const [moreInfo, setMoreInfo] = useState(false);
+  const [moreInfo, setMoreInfo] = useState(false);
 
-    const MoreDetails = () => {
-        console.log("person", props.person);
-        return (
-          <div>
-            <p>
-              Date Of Birth: {props.person.dob.date} Age: {props.person.dob.age}
-            </p>
-          </div>
-        );
-      };
-
-
+  const MoreDetails = () => {
+    console.log("users", props.users);
     return (
-        <div>
-          {moreInfo && <MoreDetails />}
-          <button onClick={() => setMoreInfo(!moreInfo)}>
-            {moreInfo ? "Display Less" : "Display More"}
-          </button>
-        </div>
-      );
-    }
+      <div>
+        <p>
+          DOB: {props.users.dob.date} AGE: {props.users.dob.age}
+        </p>
+      </div>
+    );
+  };
+
+  return (
+    <div>
+      {moreInfo && <MoreDetails />}
+      <button onClick={() => setMoreInfo(!moreInfo)}>
+        {moreInfo ? "Display Less" : "Display More"}
+      </button>
+    </div>
+  );
+}

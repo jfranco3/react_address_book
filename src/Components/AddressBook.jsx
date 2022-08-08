@@ -1,43 +1,41 @@
 import React, { useEffect, useState } from "react";
 import Details from "./Details";
 
-export default function AddressBook(props) {
-  const [people, setPeople] = useState({ results: [] });
+export default function AddressBook2() {
+  const [users, setUsers] = useState({ results: [] });
 
   useEffect(() => {
-    const fetchPeople = () => {
+    const fetchUsers = () => {
       fetch("https://randomuser.me/api?results=25")
         .then((response) => {
           return response.json();
         })
-        .then((people) => {
-          setPeople(people);
-          console.log(people);
+        .then((users) => {
+          setUsers(users);
+          console.log(users);
         });
     };
-    fetchPeople();
+    fetchUsers();
   }, []);
 
   return (
     <div>
       <ol>
-        {people.results.map((person, index) => {
+        {users.results.map((users, index) => {
           return (
             <li key={index}>
               <h2>
-                {person.name.title}{" "}
-                {person.name.first}{" "}
-                {person.name.last}
+                {users.name.title} {users.name.first} {users.name.last}
               </h2>
-              <p>Gender: {person.gender}</p>
+              <p>Gender: {users.gender}</p>
               <p>
-                Location: {person.location.street.name}{" "}
-                {person.location.street.number} {person.location.city}{" "}
-                {person.location.state} {person.location.country}
+                Location: {users.location.street.name}{" "}
+                {users.location.street.number} {users.location.city}{" "}
+                {users.location.state} {users.location.country}
               </p>
-              <img src={`${person.picture.large}`}></img> 
-         
-              <Details person={person} />
+              <img src={`${users.picture.large}`}></img>
+
+              <Details users={users} />
               <hr></hr>
             </li>
           );
