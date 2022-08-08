@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Details from "./Details";
 
-export default function AddressBook2() {
+export default function AddressBook() {
   const [users, setUsers] = useState({ results: [] });
 
   useEffect(() => {
