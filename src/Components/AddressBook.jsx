@@ -32,7 +32,8 @@ export default function AddressBook() {
               <hr></hr>
             </li>
           );
-        })};
+        })}
+        ;
       </ol>
     </div>
   );
